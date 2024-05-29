@@ -14,7 +14,9 @@ jobs:
       prs: ${{ steps.list_prs.outputs.prs }}
     steps:
       - id: list_prs
-        run: echo "prs=${{ inputs.prs }}" >> "$GITHUB_OUTPUT"
+        uses: cschadewitz/dynamic-matrix@v1
+        with:
+          matrix_input: ${{ inputs.prs }}
     
   approve:
     runs-on: ubuntu-latest
