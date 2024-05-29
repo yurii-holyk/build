@@ -10,11 +10,11 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    outputs:
+      prs: ${{ steps.list_prs.outputs.prs }}
     steps:
       - id: list_prs
         run: echo "prs={${{ input.prs }}}" >> "$GITHUB_OUTPUT"
-    outputs:
-      prs: ${{ steps.list_prs.outputs.prs }}
     
   approve:
     runs-on: ubuntu-latest
