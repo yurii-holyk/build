@@ -21,6 +21,6 @@ jobs:
     needs: validate
     strategy:
       matrix:
-        prs: ${{ fromJson(needs.validate.output.prs) }}
+        prs: ${{ fromJson(needs.validate.outputs.prs) }}
     steps:
       - run: echo ${{ matrix.prs }}
