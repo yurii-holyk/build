@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       prs:
-        description: 'List of patches. Comma separated'
+        description: "List of patches. Comma separated"
         required: true
         default: ""
 
@@ -14,7 +14,7 @@ jobs:
       prs: ${{ steps.list_prs.outputs.prs }}
     steps:
       - id: list_prs
-        run: echo "prs={${{ input.prs }}}" >> "$GITHUB_OUTPUT"
+        run: echo "prs={${{ inputs.prs }}}" >> "$GITHUB_OUTPUT"
     
   approve:
     runs-on: ubuntu-latest
