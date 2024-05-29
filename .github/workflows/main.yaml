@@ -14,7 +14,7 @@ jobs:
       prs: ${{ steps.list_prs.outputs.prs }}
     steps:
       - id: list_prs
-        run: echo "prs=[${{ inputs.prs }}]" >> "$GITHUB_OUTPUT"
+        run: echo "prs=${{ inputs.prs }}" >> "$GITHUB_OUTPUT"
     
   approve:
     runs-on: ubuntu-latest
